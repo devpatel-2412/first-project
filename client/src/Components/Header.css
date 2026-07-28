@@ -1,0 +1,144 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 2px solid #4f7fff;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+.header-logo-icon {
+  font-size: 22px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header-nav a {
+  color: #4b4b57;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.header-nav a:hover {
+  color: #0a0a0a;
+}
+
+.header-cta {
+  background: #14251f;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.header-cta:hover {
+  background: #223a32;
+}
+
+.header-cta-mobile {
+  display: none;
+}
+
+.header-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-toggle span {
+  display: block;
+  height: 2px;
+  background: #0a0a0a;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.header-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.header-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    padding: 14px 20px;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border-bottom: 2px solid #4f7fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .header-nav.open {
+    max-height: 480px;
+  }
+
+  .header-nav a {
+    padding: 14px 20px;
+    border-top: 1px solid #eee;
+  }
+
+  .header-cta-desktop {
+    display: none;
+  }
+
+  .header-cta-mobile {
+    display: block;
+    margin: 12px 20px 16px;
+    text-align: center;
+  }
+
+  .header-toggle {
+    display: flex;
+  }
+}
